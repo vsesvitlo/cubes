@@ -3,71 +3,125 @@ static int[] Flip(/*char dir,*/ int[] arr)
 {
     int[] countsAfterFlip = new int[arr.Length];
     //Create a matrix with boxes
-    int biggestCollumn = arr.Max();
-   
-    bool[,] matrix = new bool[ arr.Length, biggestCollumn];
-    int[] horizontalCount = new int[arr.Length];
-    
+    //int biggestCollumn = arr.Max();
+    //int[,] matrix = new int[arr.Length, biggestCollumn];
+    int[,] matrix = new int[arr.Length, arr.Length];
     int countCollumns = 0;
     int countRows = 0;
-    int count = 0;
-    int biggestRow = arr.Max();
-    int[,] matrixCount = new int[biggestCollumn, horizontalCount.Length];
+    //int biggestRow = arr.Max();
+   // int[,] matrixCount = new int[biggestCollumn, horizontalCount.Length];
     //TODO: fill matrix
-
-    for (int i = 0; i <= arr.Length - 1; i++)
+    /*for (int i = 0; i < arr.Length; i++)
     {
-        //countRows = arr[i];
-        /*  for (int j = biggestCollumn - arr[i]; j <= biggestCollumn - 1; j++)
-          {
-              matrix[i, j] = true;
-              Console.Write(matrix[i, j]);   
-          }
-          Console.WriteLine();*/
-        //Console.WriteLine(countRows);
-        countCollumns += 1;
-        //Console.WriteLine(countCollumns);
-        for (int k = biggestRow - arr[i]; k <= biggestRow - 1; k++)
+        for (int j = arr.Length - arr[i]; j < arr.Length; j++)
         {
-
-            for (int m = 0; m <= k; m++)
-            {
-                matrixCount[m, i] = 1;
-            }
-                countRows = k;
-            for (int x = countRows; x >=0 ; x--)
-            {
-
-            }
-                //matrixCount[k, i] = 1;
-                Console.Write(matrixCount[k, i]);
-            Console.WriteLine(countRows);
+            matrix[i, j] = 1;
+            Console.Write(matrix[i, j]);
         }
         Console.WriteLine();
-        /*int[] internalCount = new int[biggestRow - arr[i]];
-        for (int m = 0; m <= biggestRow; m++)
+    }*/
+    for (int i = 0; i < arr.Length; i++)
+    {
+        
+        for (int j = arr.Length - arr[i]; j < arr.Length; j++)
         {
-            horizontalCount[i] = m;
-            for (int n = 0; n <= m - 1; n++)
-            {
-                internalCount[n] = 1;
-            }
-            Console.WriteLine(internalCount);
-            //countRows += 1;
-            //Console.WriteLine(countRows);
-        }*/
+            matrix[i, j] = 1;
+            Console.Write(matrix[i+1, j]);
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+   /* int[] horizontalCount = new int[arr.Length];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        for (int j = 0; j < arr.Length; j++)
+        {
+            horizontalCount[i] += matrix[i, j];
+            Console.Write(matrix[i, j]);
+        }
+        Console.WriteLine();
+        
+    }
+    Console.WriteLine();
+
+   int[] toRowCount = new int[arr.Length];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        for (int j = arr.Length -1; j >= 0; j--)
+        {
+            toRowCount[i] += matrix[j, i];
+            Console.Write(matrix[j, i]);
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+
+    int[] toRowCountReverse = new int[arr.Length];
+    for (int i = arr.Length - 1; i >= 0; i--)
+    {
+        for (int j = arr.Length - 1; j >= 0; j--)
+        {
+            toRowCountReverse[i] += matrix[j, i];
+            Console.Write(matrix[j, i]);
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+    int[] toRowCountReverseOne = new int[arr.Length];
+    for (int i = arr.Length - 1; i >= 0; i--)
+    {
+        for (int j = 0; j < arr.Length; j++)
+        {
+            toRowCountReverseOne[i] += matrix[j, i];
+            Console.Write(matrix[j, i]);
+        }
+        Console.WriteLine();
     }
 
+    Console.WriteLine();
+    int[] toRowCountReverseOneMore = new int[arr.Length];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        for (int j = arr.Length - 1; j >= 0; j--)
+        {
+            toRowCountReverseOneMore[i] += matrix[j, i];
+            Console.Write(matrix[j, i]);
+        }
+        Console.WriteLine();
+    }*/
+    Console.WriteLine();
+
+    int[] horizontalCount1 = new int[arr.Length];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        for (int j = 0; j < arr.Length; j++)
+        {
+                horizontalCount1[j] = matrix[i, j];
+                Console.Write(matrix[i, j]);
+
+        }
+        Console.WriteLine();
+
+    }
+    Console.WriteLine();
     //TODO: perform flip L/R
-
-
     //TODO: count boxes in matrix after flip
-
     return countsAfterFlip;
-
 }
 
-int[] counts = Flip(/*'R',*/ new[] { 5, 3, 1, 2 });
+//int[] counts = Flip(/*'R',*/ new[] { 4, 3, 2, 1 });
+Console.WriteLine();
+//int[] counts1 = Flip(/*'R',*/ new[] { 1, 2, 3, 4 });
+Console.WriteLine();
+//int[] counts2 = Flip(/*'R',*/ new[] { 0, 3, 3, 3 });
+Console.WriteLine();
+int[] counts3 = Flip(/*'R',*/ new[] { 1, 1, 1, 1 });
 
-Console.WriteLine(counts);
+//Console.WriteLine(counts);
 
+/*  for (int j = biggestCollumn - arr[i]; j <= biggestCollumn - 1; j++)
+      {
+          matrix[i, j] = true;
+          Console.Write(matrix[i, j]);   
+      }
+      Console.WriteLine();*/
