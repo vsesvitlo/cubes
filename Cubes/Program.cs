@@ -1,127 +1,170 @@
-﻿
-static int[] Flip(/*char dir,*/ int[] arr)
+﻿static int[,] CreateDiagonalMatrix(int n)
 {
-    int[] countsAfterFlip = new int[arr.Length];
-    //Create a matrix with boxes
-    //int biggestCollumn = arr.Max();
-    //int[,] matrix = new int[arr.Length, biggestCollumn];
-    int[,] matrix = new int[arr.Length, arr.Length];
-    int countCollumns = 0;
-    int countRows = 0;
-    //int biggestRow = arr.Max();
-   // int[,] matrixCount = new int[biggestCollumn, horizontalCount.Length];
-    //TODO: fill matrix
-    /*for (int i = 0; i < arr.Length; i++)
+
+    int[,] matrix = new int[n, n];
+
+    for (int i = 0; i < n; i++)
     {
-        for (int j = arr.Length - arr[i]; j < arr.Length; j++)
+        matrix[i, i] = 1;
+    }
+    return matrix;
+}
+static int[,] CreateReverseTriangleMatrix(int n)
+{
+
+    int[,] matrix = new int[n, n];
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = n - i - 1; j >= 0; j--)
         {
             matrix[i, j] = 1;
-            Console.Write(matrix[i, j]);
         }
-        Console.WriteLine();
-    }*/
-    for (int i = 0; i < arr.Length; i++)
+    }
+    return matrix;
+}
+static int[,] CreateDecreasingTriangleMatrix(int n)
+{
+    int[,] matrix = new int[n, n];
+    for (int i = 0; i < n; i++)
     {
-        
-        for (int j = arr.Length - arr[i]; j < arr.Length; j++)
+        int j = n - i - 1;
+        matrix[j, i] = 1;
+        matrix[i, j] = 1;
+   
+    }
+    return matrix;
+}
+static int[,] CreateCentreBlockMatrix(int n)
+{
+
+    int[,] matrix = new int[n, n];
+
+    for (int i = 1; i < n - 1; i++)
+    {
+        for (int j = n - 2; j >= 1; j--)
+        {
+            matrix[j, i] = 1;
+        }
+    }
+    return matrix;
+}
+static int[,] CreateAngleMatrix(int n)
+{
+
+    int[,] matrix = new int[n, n];
+
+    for (int i = 1; i < n; i++)
+    {
+        for (int j = n - 1; j >= 1; j--)
+        {
+            matrix[j, i] = 1;
+        }
+    }
+    return matrix;
+}
+static int[,] CreateTriangleMatrix(int n)
+{
+
+    int[,] matrix = new int[n, n];
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = n - i - 1; j < n; j++)
         {
             matrix[i, j] = 1;
-            Console.Write(matrix[i+1, j]);
         }
-        Console.WriteLine();
     }
-    Console.WriteLine();
-   /* int[] horizontalCount = new int[arr.Length];
-    for (int i = 0; i < arr.Length; i++)
+    return matrix;
+}
+static int[,] CreateIncreasingTriangleMatrix(int n)
+{
+
+    int[,] matrix = new int[n, n];
+
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < arr.Length; j++)
+        for (int j = n - i - 1; j < n; j++)
         {
-            horizontalCount[i] += matrix[i, j];
-            Console.Write(matrix[i, j]);
+            matrix[j, i] = 1;
         }
-        Console.WriteLine();
-        
     }
-    Console.WriteLine();
+    return matrix;
+}
+static int[,] CreateDiagonalReverseMatrix(int n)
+{
 
-   int[] toRowCount = new int[arr.Length];
-    for (int i = 0; i < arr.Length; i++)
+    int[,] matrix = new int[n, n];
+
+    for (int i = 0; i < n; i++)
     {
-        for (int j = arr.Length -1; j >= 0; j--)
-        {
-            toRowCount[i] += matrix[j, i];
-            Console.Write(matrix[j, i]);
-        }
-        Console.WriteLine();
+        int j = n - i - 1;
+        matrix[i, j] = 1;
     }
-    Console.WriteLine();
-
-    int[] toRowCountReverse = new int[arr.Length];
-    for (int i = arr.Length - 1; i >= 0; i--)
+    return matrix;
+}
+static int[,] CreateXMatrix(int n)
+{
+    int[,] matrix = new int[n, n];
+    for(int i = 0; i < n; i++)
     {
-        for (int j = arr.Length - 1; j >= 0; j--)
-        {
-            toRowCountReverse[i] += matrix[j, i];
-            Console.Write(matrix[j, i]);
-        }
-        Console.WriteLine();
+        int j = n - i - 1;
+        matrix[i, j] = 1;
+        matrix[i, i] = 1;
     }
-    Console.WriteLine();
-    int[] toRowCountReverseOne = new int[arr.Length];
-    for (int i = arr.Length - 1; i >= 0; i--)
-    {
-        for (int j = 0; j < arr.Length; j++)
-        {
-            toRowCountReverseOne[i] += matrix[j, i];
-            Console.Write(matrix[j, i]);
-        }
-        Console.WriteLine();
-    }
-
-    Console.WriteLine();
-    int[] toRowCountReverseOneMore = new int[arr.Length];
-    for (int i = 0; i < arr.Length; i++)
-    {
-        for (int j = arr.Length - 1; j >= 0; j--)
-        {
-            toRowCountReverseOneMore[i] += matrix[j, i];
-            Console.Write(matrix[j, i]);
-        }
-        Console.WriteLine();
-    }*/
-    Console.WriteLine();
-
-    int[] horizontalCount1 = new int[arr.Length];
-    for (int i = 0; i < arr.Length; i++)
-    {
-        for (int j = 0; j < arr.Length; j++)
-        {
-                horizontalCount1[j] = matrix[i, j];
-                Console.Write(matrix[i, j]);
-
-        }
-        Console.WriteLine();
-
-    }
-    Console.WriteLine();
-    //TODO: perform flip L/R
-    //TODO: count boxes in matrix after flip
-    return countsAfterFlip;
+    return matrix;
 }
 
-//int[] counts = Flip(/*'R',*/ new[] { 4, 3, 2, 1 });
-Console.WriteLine();
-//int[] counts1 = Flip(/*'R',*/ new[] { 1, 2, 3, 4 });
-Console.WriteLine();
-//int[] counts2 = Flip(/*'R',*/ new[] { 0, 3, 3, 3 });
-Console.WriteLine();
-int[] counts3 = Flip(/*'R',*/ new[] { 1, 1, 1, 1 });
+static void DrawMatrix(int[,] check)
 
-//Console.WriteLine(counts);
+{
+    int length = check.GetLength(0);
 
-/*  for (int j = biggestCollumn - arr[i]; j <= biggestCollumn - 1; j++)
-      {
-          matrix[i, j] = true;
-          Console.Write(matrix[i, j]);   
-      }
-      Console.WriteLine();*/
+    for (int i = 0; i < length; i++)
+    {
+        for (int j = 0; j < length; j++)
+        {
+            Console.Write(check[i, j]);
+        }
+        Console.WriteLine();
+    }
+}
+
+
+int[,] triangleDecreasing = CreateDecreasingTriangleMatrix(5);
+
+    DrawMatrix(triangleDecreasing);
+//int[,] centreBlock = CreateCentreBlockMatrix(5);
+
+//DrawMatrix(centreBlock);
+
+//int[,] angle = CreateAngleMatrix(5);
+
+//DrawMatrix(angle);
+
+//int[,] triangleIncreasing = CreateIncreasingTriangleMatrix(5);
+
+//DrawMatrix(triangleIncreasing);
+
+//int[,] diagonalReverseTwice = CreateXMatrix(5);
+
+//DrawMatrix(diagonalReverseTwice);
+
+//int[,] diagonalReverse = CreateDiagonalReverseMatrix(5);
+
+//DrawMatrix(diagonalReverse);
+
+//int[,] triangleReverse = CreateTriangleMatrix(5);
+
+//DrawMatrix(triangleReverse);
+
+//int[,] triangle = CreateReverseTriangleMatrix(5);
+
+//DrawMatrix(triangle);
+
+//int[,] diagonal = CreateDiagonalMatrix(5);
+
+//DrawMatrix(diagonal);
+//Thread.Sleep(500);
+
+//Console.ReadKey();
