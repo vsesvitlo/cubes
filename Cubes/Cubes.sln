@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1705.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cubes", "Cubes.csproj", "{498A07F1-3F8F-4B65-8ADA-566552C6964E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kata_cubes", "..\kata_cubes\kata_cubes.csproj", "{E09F42BD-5CEF-4ECB-8E5A-CA17AAB6677A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{498A07F1-3F8F-4B65-8ADA-566552C6964E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{498A07F1-3F8F-4B65-8ADA-566552C6964E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{498A07F1-3F8F-4B65-8ADA-566552C6964E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E09F42BD-5CEF-4ECB-8E5A-CA17AAB6677A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E09F42BD-5CEF-4ECB-8E5A-CA17AAB6677A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E09F42BD-5CEF-4ECB-8E5A-CA17AAB6677A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E09F42BD-5CEF-4ECB-8E5A-CA17AAB6677A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

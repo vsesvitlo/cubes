@@ -28,10 +28,22 @@ static int[,] CreateDecreasingTriangleMatrix(int n)
     int[,] matrix = new int[n, n];
     for (int i = 0; i < n; i++)
     {
-        int j = n - i - 1;
-        matrix[j, i] = 1;
-        matrix[i, j] = 1;
-   
+        for (int j = n - i - 1; j < n; j++)
+        {
+            matrix[i, j] = 1;
+        }
+    }
+    return matrix;
+}
+static int[,] CreateDecreasingTriangleMirrorMatrix(int n)
+{
+    int[,] matrix = new int[n, n];
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = n - 1; j >= i; j--)
+        {
+            matrix[i, j] = 1;
+        }
     }
     return matrix;
 }
@@ -106,7 +118,7 @@ static int[,] CreateDiagonalReverseMatrix(int n)
 static int[,] CreateXMatrix(int n)
 {
     int[,] matrix = new int[n, n];
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         int j = n - i - 1;
         matrix[i, j] = 1;
@@ -131,9 +143,12 @@ static void DrawMatrix(int[,] check)
 }
 
 
-int[,] triangleDecreasing = CreateDecreasingTriangleMatrix(5);
+//int[,] triangleDecreasing = CreateDecreasingTriangleMatrix(5);
 
-    DrawMatrix(triangleDecreasing);
+//DrawMatrix(triangleDecreasing);
+
+int[,] triangleMirror = CreateDecreasingTriangleMirrorMatrix(5);
+DrawMatrix(triangleMirror);
 //int[,] centreBlock = CreateCentreBlockMatrix(5);
 
 //DrawMatrix(centreBlock);
@@ -158,13 +173,12 @@ int[,] triangleDecreasing = CreateDecreasingTriangleMatrix(5);
 
 //DrawMatrix(triangleReverse);
 
-//int[,] triangle = CreateReverseTriangleMatrix(5);
+int[,] triangle = CreateReverseTriangleMatrix(5);
 
-//DrawMatrix(triangle);
+DrawMatrix(triangle);
 
-//int[,] diagonal = CreateDiagonalMatrix(5);
+int[,] diagonal = CreateDiagonalMatrix(5);
 
-//DrawMatrix(diagonal);
-//Thread.Sleep(500);
-
-//Console.ReadKey();
+DrawMatrix(diagonal);
+Thread.Sleep(500);
+Console.ReadKey();
