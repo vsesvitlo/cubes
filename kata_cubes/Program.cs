@@ -22,11 +22,11 @@ static void DrawMatrix(int[,] check)
     int width = check.GetLength(0);
     int height = check.GetLength(1);
 
-    for (int i = 0; i < width; i++)
+    for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < height; j++)
+        for (int j = 0; j < width; j++)
         {
-            Console.Write(check[i, j]);
+            Console.Write(check[j, i]);
         }
         Console.WriteLine();
     }
