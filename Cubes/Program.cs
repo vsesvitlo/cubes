@@ -143,35 +143,35 @@ static void DrawMatrix(int[,] check)
 }
 
 
-//int[,] triangleDecreasing = CreateDecreasingTriangleMatrix(5);
+int[,] triangleDecreasing = CreateDecreasingTriangleMatrix(5);
 
-//DrawMatrix(triangleDecreasing);
+DrawMatrix(triangleDecreasing);
 
 int[,] triangleMirror = CreateDecreasingTriangleMirrorMatrix(5);
 DrawMatrix(triangleMirror);
-//int[,] centreBlock = CreateCentreBlockMatrix(5);
+int[,] centreBlock = CreateCentreBlockMatrix(5);
 
-//DrawMatrix(centreBlock);
+DrawMatrix(centreBlock);
 
-//int[,] angle = CreateAngleMatrix(5);
+int[,] angle = CreateAngleMatrix(5);
 
-//DrawMatrix(angle);
+DrawMatrix(angle);
 
-//int[,] triangleIncreasing = CreateIncreasingTriangleMatrix(5);
+int[,] triangleIncreasing = CreateIncreasingTriangleMatrix(5);
 
-//DrawMatrix(triangleIncreasing);
+DrawMatrix(triangleIncreasing);
 
-//int[,] diagonalReverseTwice = CreateXMatrix(5);
+int[,] diagonalReverseTwice = CreateXMatrix(5);
 
-//DrawMatrix(diagonalReverseTwice);
+DrawMatrix(diagonalReverseTwice);
 
-//int[,] diagonalReverse = CreateDiagonalReverseMatrix(5);
+int[,] diagonalReverse = CreateDiagonalReverseMatrix(5);
 
-//DrawMatrix(diagonalReverse);
+DrawMatrix(diagonalReverse);
 
-//int[,] triangleReverse = CreateTriangleMatrix(5);
+int[,] triangleReverse = CreateTriangleMatrix(5);
 
-//DrawMatrix(triangleReverse);
+DrawMatrix(triangleReverse);
 
 int[,] triangle = CreateReverseTriangleMatrix(5);
 
