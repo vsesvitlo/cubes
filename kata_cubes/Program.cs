@@ -31,8 +31,8 @@
     }
     DrawMatrix(matrix);
     WriteArray(count);
-    DrawMatrix(matrixLeft);
-    DrawMatrix(matrixRight);
+    //DrawMatrix(matrixLeft);
+    //DrawMatrix(matrixRight);
     return count;
 }
 
